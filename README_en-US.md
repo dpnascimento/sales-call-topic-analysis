@@ -42,7 +42,7 @@ Solution for analyzing discriminative semantic patterns in sales calls.
 ## 🏗️ Architecture
 
 ```
-v3/
+sales-call-topic-analysis/
 ├── 📁 config/                    # Configurations
 │   ├── __init__.py
 │   └── settings_v3.py           # Centralized settings

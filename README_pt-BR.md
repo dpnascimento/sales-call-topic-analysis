@@ -42,7 +42,7 @@ Solução  para análise de padrões semânticos discriminativos em ligações d
 ## 🏗️ Arquitetura
 
 ```
-v3/
+sales-call-topic-analysis/
 ├── 📁 config/                    # Configurações
 │   ├── __init__.py
 │   └── settings_v3.py           # Settings centralizados
