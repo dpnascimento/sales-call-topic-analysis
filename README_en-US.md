@@ -35,7 +35,7 @@ Solution for analyzing discriminative semantic patterns in sales calls.
 - **🏷️ 80+ Patterns**: Organized into 15 semantic categories
 - **🔬 Interpretable PCA + UMAP**: Geometric analysis with mathematical interpretation
 - **📉 Visualizations**: UMAPs, PCAs, heatmaps, automatic dashboards
-- **📄 TCC Reports**: Automatic report generation in MD/HTML
+- **📄 Reports**: Automatic report generation in MD/HTML
 
 ---
 
@@ -178,7 +178,7 @@ This will:
 6. ✅ Generate all visualizations
 7. ✅ Save results to `outputs/`
 
-### Generate TCC Report
+### Generate Report
 
 ```bash
 # After running the pipeline

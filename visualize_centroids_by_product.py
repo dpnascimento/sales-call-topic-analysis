@@ -5,7 +5,6 @@ Visualização de Centroides por Produto
 Gera múltiplas visualizações dos protótipos semânticos para análise comparativa.
 
 Usage:
-    cd /Users/danielnascimento/git/tcc
     source .venv/bin/activate
     python v3/visualize_centroids_by_product.py
 """
@@ -95,7 +94,7 @@ def visualize_centroids_2d():
         log.info(f"\n✓ {len(centroids)} centroides coletados")
         
         # Cria output dir
-        output_dir = Path('/Users/danielnascimento/git/tcc/v3/outputs/visualizations/centroids')
+        output_dir = Path(__file__).parent / 'outputs' / 'visualizations' / 'centroids'
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # ========================================================================

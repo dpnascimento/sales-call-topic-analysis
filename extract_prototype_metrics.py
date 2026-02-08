@@ -3,7 +3,6 @@
 Extrai métricas de protótipos do pipeline V3 para preencher tabelas do TCC
 
 Usage:
-    cd /Users/danielnascimento/git/tcc
     source .venv/bin/activate
     python v3/extract_prototype_metrics.py
 """

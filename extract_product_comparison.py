@@ -3,7 +3,6 @@
 Extrai apenas a comparação de protótipos por produto (visão full)
 
 Usage:
-    cd /Users/danielnascimento/git/tcc
     source .venv/bin/activate
     python v3/extract_product_comparison.py
 """

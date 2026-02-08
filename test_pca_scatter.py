@@ -6,7 +6,6 @@ Testa a nova funcionalidade que gera visualizações 2D dos embeddings
 reduzidos por PCA, coloridos por tópico ou outcome.
 
 Usage:
-    cd /Users/danielnascimento/git/tcc
     source .venv/bin/activate
     python v3/test_pca_scatter.py
 """

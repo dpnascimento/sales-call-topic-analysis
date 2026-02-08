@@ -9,7 +9,6 @@ Testa a nova funcionalidade adicionada ao pipeline V3 que gera:
 4. Comparação temporal: ganhas vs perdidas
 
 Usage:
-    cd /Users/danielnascimento/git/tcc
     source .venv/bin/activate
     python v3/test_topics_overtime.py
 """
