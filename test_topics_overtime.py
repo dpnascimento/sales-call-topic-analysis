@@ -2,7 +2,7 @@
 """
 Script de teste para análise temporal de tópicos (Topics over Time)
 
-Testa a nova funcionalidade adicionada ao pipeline V3 que gera:
+Testa a funcionalidade de análise temporal que gera:
 1. Evolução calendário (nativo BERTopic)
 2. Sazonalidade por dia da semana
 3. Evolução mensal
@@ -10,18 +10,15 @@ Testa a nova funcionalidade adicionada ao pipeline V3 que gera:
 
 Usage:
     source .venv/bin/activate
-    python v3/test_topics_overtime.py
+    python test_topics_overtime.py
 """
 
 import sys
 import os
 
-# Adiciona o diretório raiz ao path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.topics_v3 import TopicAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.topics_v3 import TopicAnalyzerV3
+from config import settings_v3
 import logging
 
 # Configura logging

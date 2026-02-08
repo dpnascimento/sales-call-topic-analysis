@@ -4,16 +4,10 @@ Extensão da análise por produto com segmentação adicional por outcome
 """
 import logging
 from typing import Dict, List
-import sys
-from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.patterns_by_product import PatternsByProductAnalyzer
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.patterns_by_product import PatternsByProductAnalyzer
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

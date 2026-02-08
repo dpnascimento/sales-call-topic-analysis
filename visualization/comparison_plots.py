@@ -4,15 +4,10 @@ Gráficos comparativos entre visões de embedding e produtos
 import logging
 from typing import Dict, List
 import numpy as np
-import sys
 from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 
@@ -450,7 +445,7 @@ Melhor Silhueta: {best_silhouette:.4f}
                 ax6.text(0.1, 0.5, stats_text, fontsize=11, family='monospace',
                         verticalalignment='center')
             
-            plt.suptitle("Dashboard de Análise V3", fontsize=18, fontweight='bold', y=0.98)
+            plt.suptitle("Dashboard de Análise", fontsize=18, fontweight='bold', y=0.98)
             plt.savefig(output_path, dpi=300, bbox_inches='tight')
             plt.close()
             
@@ -478,7 +473,7 @@ Melhor Silhueta: {best_silhouette:.4f}
         try:
             import matplotlib.pyplot as plt
             import seaborn as sns
-            from v3.core.embeddings_v3 import centroid, cosine_distance, from_pgvector
+            from core.embeddings_v3 import centroid, cosine_distance, from_pgvector
             
             if embedding_views is None:
                 embedding_views = ['agent', 'client']
@@ -496,7 +491,7 @@ Melhor Silhueta: {best_silhouette:.4f}
                     group_labels.append(group_name)
                     
                     # Define coluna de embedding baseado na view (usa settings_v3)
-                    from v3.config import settings_v3
+                    from config import settings_v3
                     emb_col = settings_v3.EMBEDDING_COLUMN_MAP[view]
                     valid_col = settings_v3.EMBEDDING_VALID_MAP[view]
                     

@@ -4,16 +4,11 @@ Visualizações UMAP para diferentes visões de embedding
 import logging
 from typing import List, Dict, Optional
 import numpy as np
-import sys
 from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.core.embeddings_v3 import from_pgvector
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from core.embeddings_v3 import from_pgvector
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

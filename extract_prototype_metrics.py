@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 """
-Extrai métricas de protótipos do pipeline V3 para preencher tabelas do TCC
+Extrai métricas de protótipos do pipeline para preencher tabelas do TCC
 
 Usage:
     source .venv/bin/activate
-    python v3/extract_prototype_metrics.py
+    python extract_prototype_metrics.py
 """
 
 import sys
 import os
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
+from config import settings_v3
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')

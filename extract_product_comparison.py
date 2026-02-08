@@ -4,18 +4,16 @@ Extrai apenas a comparação de protótipos por produto (visão full)
 
 Usage:
     source .venv/bin/activate
-    python v3/extract_product_comparison.py
+    python extract_product_comparison.py
 """
 
 import sys
 import os
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
+from config import settings_v3
 import logging
 
 logging.basicConfig(level=logging.WARNING, format='%(message)s')

@@ -1,4 +1,4 @@
-"""Core utilities para V3"""
+"""Core utilities"""
 from .database_v3 import DatabaseManagerV3
 from .embeddings_v3 import *
 

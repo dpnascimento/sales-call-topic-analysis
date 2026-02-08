@@ -2,23 +2,20 @@
 """
 Script de teste para scatter plots PCA + BERTopic
 
-Testa a nova funcionalidade que gera visualizações 2D dos embeddings
+Testa a funcionalidade que gera visualizações 2D dos embeddings
 reduzidos por PCA, coloridos por tópico ou outcome.
 
 Usage:
     source .venv/bin/activate
-    python v3/test_pca_scatter.py
+    python test_pca_scatter.py
 """
 
 import sys
 import os
 
-# Adiciona o diretório raiz ao path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.topics_v3 import TopicAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.topics_v3 import TopicAnalyzerV3
+from config import settings_v3
 import logging
 
 # Configura logging

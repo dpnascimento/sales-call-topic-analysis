@@ -1,7 +1,6 @@
 """
-Configurações centralizadas para V3
+Configurações centralizadas
 
-IMPORTANTE: Este módulo é completamente autocontido e não depende de código externo à pasta v3.
 Todas as configurações são lidas de variáveis de ambiente ou valores padrão.
 """
 import os
@@ -23,7 +22,7 @@ PG_PASS = os.getenv("PGPASSWORD", "postgres")
 PG_DB = os.getenv("PGDATABASE", "tcc")
 
 # =========================
-# V3 - EMBEDDINGS V2
+# EMBEDDINGS V2
 # =========================
 # Visões disponíveis (labeled foi descartada por baixa qualidade)
 EMBEDDING_VIEWS = ["full", "agent", "client"]
@@ -135,9 +134,8 @@ TOPICS_GENERATE_OVERTIME = os.getenv("TOPICS_GENERATE_OVERTIME", "true").lower()
 TOPICS_OVERTIME_BINS = int(os.getenv("TOPICS_OVERTIME_BINS", "20"))
 
 # =========================
-# OUTPUTS V3
+# OUTPUTS
 # =========================
-# ROOT_DIR já aponta para v3/, então não precisamos adicionar "v3" novamente
 V3_OUTPUT_DIR = os.path.join(ROOT_DIR, "outputs")
 V3_DATA_DIR = os.path.join(V3_OUTPUT_DIR, "data")
 V3_PLOTS_DIR = os.path.join(V3_OUTPUT_DIR, "plots")

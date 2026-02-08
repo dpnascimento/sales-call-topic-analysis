@@ -1,27 +1,20 @@
 """
-DatabaseManager adaptado para V3
+DatabaseManager
 Inclui métodos específicos para análise por produto e visões de embedding
 """
 import logging
 from typing import Any, List, Optional, Dict
 from contextlib import contextmanager
-import sys
-from pathlib import Path
-
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
 import psycopg
 from psycopg.rows import dict_row
 
-from v3.config import settings_v3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 
 
 class DatabaseManagerV3:
-    """Gerencia conexões e operações de banco de dados para V3"""
+    """Gerencia conexões e operações de banco de dados"""
     
     def __init__(self):
         self.conn = None
@@ -37,7 +30,7 @@ class DatabaseManagerV3:
                 dbname=settings_v3.PG_DB
             )
             self.conn.autocommit = False
-            log.info("Conexão V3 estabelecida com sucesso")
+            log.info("Conexão estabelecida com sucesso")
             return self.conn
         except psycopg.Error as e:
             log.error(f"Erro ao conectar: {e}")
@@ -47,7 +40,7 @@ class DatabaseManagerV3:
         """Fecha conexão"""
         if self.conn:
             self.conn.close()
-            log.info("Conexão V3 fechada")
+            log.info("Conexão fechada")
     
     @contextmanager
     def get_cursor(self, row_factory=dict_row):
@@ -122,7 +115,7 @@ class DatabaseManagerV3:
             raise
     
     # =========================
-    # MÉTODOS ESPECÍFICOS V3
+    # MÉTODOS ESPECÍFICOS
     # =========================
     
     # =========================

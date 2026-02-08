@@ -1,8 +1,8 @@
-# V3 - Semantic Pattern Analysis in Sales Calls
+# Semantic Pattern Analysis in Sales Calls
 
-**Version:** 3.0.0  
+**Version:** 1.0.0  
 **Author:** Daniel Nascimento  
-**Date:** October 2025
+**Date:** February 2026
 
 🇺🇸 English | [🇧🇷 Português](README_pt-BR.md)
 
@@ -162,9 +162,6 @@ SELECT COUNT(*) FROM call_embeddings_v2 WHERE client_valid = TRUE;
 ### Run Complete Pipeline
 
 ```bash
-# Navigate to v3 directory
-cd v3
-
 # Execute main pipeline
 python pipeline_v3_main.py
 ```
@@ -198,7 +195,7 @@ This will generate:
 #### `database_v3.py`
 
 ```python
-from v3.core.database_v3 import DatabaseManagerV3
+from core.database_v3 import DatabaseManagerV3
 
 db = DatabaseManagerV3()
 db.connect()
@@ -224,7 +221,7 @@ transcripts = db.get_product_transcripts_by_role(
 #### `embeddings_v3.py`
 
 ```python
-from v3.core.embeddings_v3 import (
+from core.embeddings_v3 import (
     from_pgvector, cosine_similarity,
     centroid, average_silhouette
 )
@@ -247,7 +244,7 @@ silhouette = average_silhouette(cluster_a, cluster_b)
 #### `prototypes_v3.py`
 
 ```python
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
 
 analyzer = PrototypeAnalyzerV3(db)
 
@@ -267,7 +264,7 @@ comparison = analyzer.compare_products_separation(embedding_view="client")
 #### `patterns_by_product.py`
 
 ```python
-from v3.analysis.patterns_by_product import PatternsByProductAnalyzer
+from analysis.patterns_by_product import PatternsByProductAnalyzer
 
 analyzer = PatternsByProductAnalyzer(db)
 
@@ -293,7 +290,7 @@ comparison = analyzer.compare_products(
 #### `comparisons.py`
 
 ```python
-from v3.analysis.comparisons import EmbeddingViewComparator
+from analysis.comparisons import EmbeddingViewComparator
 
 comparator = EmbeddingViewComparator(db)
 
@@ -312,7 +309,7 @@ recommendations = comparator.generate_view_recommendations()
 #### `umap_plots.py`
 
 ```python
-from v3.visualization.umap_plots import UMAPVisualizer
+from visualization.umap_plots import UMAPVisualizer
 
 visualizer = UMAPVisualizer(db)
 
@@ -335,7 +332,7 @@ visualizer.plot_product_grid(grid, "grid.png")
 #### `comparison_plots.py`
 
 ```python
-from v3.visualization.comparison_plots import ComparisonPlotter
+from visualization.comparison_plots import ComparisonPlotter
 
 plotter = ComparisonPlotter(db)
 
@@ -444,8 +441,8 @@ outputs/
 ### Example 1: Quick Product Analysis
 
 ```python
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.patterns_by_product import PatternsByProductAnalyzer
+from core.database_v3 import DatabaseManagerV3
+from analysis.patterns_by_product import PatternsByProductAnalyzer
 
 # Connect
 db = DatabaseManagerV3()
@@ -467,7 +464,7 @@ db.close()
 ### Example 2: Compare Views
 
 ```python
-from v3.analysis.comparisons import EmbeddingViewComparator
+from analysis.comparisons import EmbeddingViewComparator
 
 comparator = EmbeddingViewComparator(db)
 
@@ -482,7 +479,7 @@ for view, metrics in results['by_view'].items():
 ### Example 3: Generate Specific Visualization
 
 ```python
-from v3.visualization.umap_plots import UMAPVisualizer
+from visualization.umap_plots import UMAPVisualizer
 
 visualizer = UMAPVisualizer(db)
 

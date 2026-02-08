@@ -5,21 +5,17 @@ Script de teste para as novas visualizações implementadas:
 2. Word clouds por tópico
 
 Uso:
-    python v3/test_new_visualizations.py [--heatmap-only | --wordclouds-only]
+    python test_new_visualizations.py [--heatmap-only | --wordclouds-only]
 """
 import sys
 import os
 import logging
 from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.visualization.comparison_plots import ComparisonPlotter
-from v3.analysis.topics_v3 import TopicAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from visualization.comparison_plots import ComparisonPlotter
+from analysis.topics_v3 import TopicAnalyzerV3
+from config import settings_v3
 from datetime import datetime
 
 # Configura logging

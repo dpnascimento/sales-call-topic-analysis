@@ -1,25 +1,19 @@
 """
-Análise de protótipos para V3
+Análise de protótipos
 Suporta múltiplas visões de embedding (full, agent, client)
 """
 import logging
 from typing import Dict, List, Optional
 import numpy as np
-import sys
-from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.core.embeddings_v3 import (
+from core.database_v3 import DatabaseManagerV3
+from core.embeddings_v3 import (
     from_pgvector, l2_normalize, centroid, 
     cosine_similarity, cosine_distance,
     intra_cluster_cohesion, inter_cluster_separation,
     average_silhouette
 )
-from v3.config import settings_v3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

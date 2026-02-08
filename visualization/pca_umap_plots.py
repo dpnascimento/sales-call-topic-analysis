@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
-from v3.config import settings_v3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

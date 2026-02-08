@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pipeline Principal V3 - Análise de Padrões Semânticos em Vendas
+Pipeline Principal - Análise de Padrões Semânticos em Vendas
 Integra todas as análises: protótipos, padrões, comparações e visualizações
 """
 import sys
@@ -9,21 +9,17 @@ import logging
 import os
 from datetime import datetime
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
-from v3.analysis.patterns_by_product import PatternsByProductAnalyzer
-from v3.analysis.patterns_by_product_status import PatternsByProductStatusAnalyzer
-from v3.analysis.comparisons import EmbeddingViewComparator
-from v3.analysis.embedding_geometry import EmbeddingGeometryAnalyzer
-from v3.analysis.topics_v3 import TopicAnalyzerV3
-from v3.visualization.umap_plots import UMAPVisualizer
-from v3.visualization.comparison_plots import ComparisonPlotter
-from v3.visualization.pca_umap_plots import PCAUMAPVisualizer
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
+from analysis.patterns_by_product import PatternsByProductAnalyzer
+from analysis.patterns_by_product_status import PatternsByProductStatusAnalyzer
+from analysis.comparisons import EmbeddingViewComparator
+from analysis.embedding_geometry import EmbeddingGeometryAnalyzer
+from analysis.topics_v3 import TopicAnalyzerV3
+from visualization.umap_plots import UMAPVisualizer
+from visualization.comparison_plots import ComparisonPlotter
+from visualization.pca_umap_plots import PCAUMAPVisualizer
+from config import settings_v3
 
 # Configuração de logging
 logging.basicConfig(
@@ -38,7 +34,7 @@ log = logging.getLogger(__name__)
 
 
 class PipelineV3:
-    """Pipeline principal de análise V3"""
+    """Pipeline principal de análise"""
     
     def __init__(self):
         self.db = None
@@ -59,7 +55,7 @@ class PipelineV3:
     def setup(self):
         """Inicializa conexão e analisadores"""
         log.info("="*80)
-        log.info("🚀 PIPELINE V3 - ANÁLISE DE PADRÕES SEMÂNTICOS EM VENDAS")
+        log.info("🚀 PIPELINE - ANÁLISE DE PADRÕES SEMÂNTICOS EM VENDAS")
         log.info("="*80)
         log.info(f"Timestamp: {self.timestamp}")
         log.info(f"Output dir: {settings_v3.V3_OUTPUT_DIR}")
@@ -443,7 +439,7 @@ class PipelineV3:
             
             # Finalização
             log.info("\n" + "="*80)
-            log.info("✅ PIPELINE V3 CONCLUÍDO COM SUCESSO!")
+            log.info("✅ PIPELINE CONCLUÍDO COM SUCESSO!")
             log.info("="*80)
             log.info(f"\n📁 Resultados salvos em: {settings_v3.V3_OUTPUT_DIR}")
             log.info(f"  • Dados: {settings_v3.V3_DATA_DIR}")

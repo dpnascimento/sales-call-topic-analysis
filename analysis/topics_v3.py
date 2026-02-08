@@ -1,5 +1,5 @@
 """
-Análise de Tópicos com BERTopic para Pipeline V3
+Análise de Tópicos com BERTopic
 Usa embeddings V2 (call_embeddings_v2) para identificar tópicos semânticos
 """
 import logging
@@ -10,9 +10,9 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.core.embeddings_v3 import from_pgvector, l2_normalize
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from core.embeddings_v3 import from_pgvector, l2_normalize
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 
@@ -326,8 +326,8 @@ class TopicAnalyzerV3:
             LIMIT %(limit)s
             """
         else:
-            # Modo: Enunciados individuais (não implementado ainda no V3)
-            log.warning("Modo de enunciados não implementado para V3, usando ligações completas")
+            # Modo: Enunciados individuais (não implementado ainda)
+            log.warning("Modo de enunciados não implementado, usando ligações completas")
             return [], np.array([]), []
         
         # Parâmetros da query

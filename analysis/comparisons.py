@@ -5,20 +5,14 @@ Analisa qual visão produz melhor separação ganha/perdida
 import logging
 from typing import Dict, List
 import numpy as np
-import sys
-from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.core.embeddings_v3 import (
+from core.database_v3 import DatabaseManagerV3
+from core.embeddings_v3 import (
     from_pgvector, cosine_similarity, cosine_distance,
     average_silhouette, inter_cluster_separation
 )
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
-from v3.config import settings_v3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

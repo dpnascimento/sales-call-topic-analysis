@@ -1,5 +1,5 @@
 """
-Utilitários para manipulação de embeddings em V3
+Utilitários para manipulação de embeddings
 """
 import numpy as np
 from typing import List, Optional, Dict

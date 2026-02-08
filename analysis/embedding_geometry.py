@@ -7,9 +7,9 @@ from typing import Dict, List, Tuple, Optional
 import numpy as np
 from dataclasses import dataclass
 
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.core.embeddings_v3 import from_pgvector, cosine_similarity
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from core.embeddings_v3 import from_pgvector, cosine_similarity
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 

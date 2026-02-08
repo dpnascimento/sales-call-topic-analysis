@@ -7,16 +7,10 @@ import re
 from collections import Counter, defaultdict
 from typing import Dict, List
 import numpy as np
-import sys
-from pathlib import Path
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.config import settings_v3
-from v3.enhanced_patterns import get_enhanced_patterns, categorize_patterns
+from core.database_v3 import DatabaseManagerV3
+from config import settings_v3
+from enhanced_patterns import get_enhanced_patterns, categorize_patterns
 
 log = logging.getLogger(__name__)
 

@@ -8,19 +8,9 @@ from pathlib import Path
 import logging
 import argparse
 
-# Force reload de módulos v3 para garantir que stopwords atualizadas sejam carregadas
-# Remove todos os módulos v3.* do cache do Python
-modules_to_remove = [key for key in list(sys.modules.keys()) if key.startswith('v3')]
-for module in modules_to_remove:
-    del sys.modules[module]
-
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.topics_v3 import TopicAnalyzerV3
-from v3.config import settings_v3
+from core.database_v3 import DatabaseManagerV3
+from analysis.topics_v3 import TopicAnalyzerV3
+from config import settings_v3
 
 # Configuração de logging
 logging.basicConfig(

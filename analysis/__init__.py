@@ -1,4 +1,4 @@
-"""Módulos de análise V3"""
+"""Módulos de análise"""
 from .prototypes_v3 import PrototypeAnalyzerV3
 from .patterns_by_product import PatternsByProductAnalyzer
 from .patterns_by_product_status import PatternsByProductStatusAnalyzer

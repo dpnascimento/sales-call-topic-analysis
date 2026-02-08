@@ -3,19 +3,13 @@
 Gerador de Relatório Final para TCC
 Consolida todos os resultados em relatório estruturado
 """
-import sys
-from pathlib import Path
 import json
 import logging
 from datetime import datetime
 from typing import Dict, List
 import os
 
-# Adiciona diretório raiz ao path
-ROOT_DIR = Path(__file__).parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
-from v3.config import settings_v3
+from config import settings_v3
 
 log = logging.getLogger(__name__)
 
@@ -177,7 +171,7 @@ class TCCReportGenerator:
 **Trabalho de Conclusão de Curso (TCC)**  
 **Autor:** Daniel Nascimento  
 **Data:** {datetime.now().strftime("%d de %B de %Y")}  
-**Versão:** V3 - Análise Multiview com Embeddings V2
+**Versão:** 1.0 - Análise Multiview com Embeddings V2
 
 ---
 
@@ -225,7 +219,7 @@ class TCCReportGenerator:
         
         return f"""## 1. Resumo Executivo
 
-Este trabalho investiga padrões semânticos discriminativos em ligações de vendas utilizando embeddings de texto e técnicas de análise multiview. A abordagem V3 introduz:
+Este trabalho investiga padrões semânticos discriminativos em ligações de vendas utilizando embeddings de texto e técnicas de análise multiview. A abordagem introduz:
 
 ### Contribuições Principais
 
@@ -677,7 +671,7 @@ Transcrições → Embeddings V2 → Análise Multiview → Insights
 
 ### 7.4. Considerações Finais
 
-Este trabalho demonstra que análise semântica sistemática de ligações de vendas pode identificar padrões discriminativos acionáveis. A abordagem V3 multiview oferece uma base sólida para sistemas de coaching automatizado e recomendação de estratégias.
+Este trabalho demonstra que análise semântica sistemática de ligações de vendas pode identificar padrões discriminativos acionáveis. A abordagem multiview oferece uma base sólida para sistemas de coaching automatizado e recomendação de estratégias.
 
 **Implementação Prática**: Os insights podem ser integrados em:
 - Dashboards de monitoramento em tempo real
@@ -694,7 +688,7 @@ Este trabalho demonstra que análise semântica sistemática de ligações de ve
 ### A. Estrutura de Arquivos
 
 ```
-v3/
+sales-call-topic-analysis/
 ├── config/
 │   └── settings_v3.py          # Configurações
 ├── core/
@@ -745,10 +739,10 @@ Para reproduzir este relatório:
 
 ```bash
 # 1. Executar pipeline completo
-python v3/pipeline_v3_main.py
+python pipeline_v3_main.py
 
 # 2. Gerar relatório
-python v3/generate_tcc_report.py
+python generate_tcc_report.py
 ```
 
 ### E. Contato

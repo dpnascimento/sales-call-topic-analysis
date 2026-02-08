@@ -1,3 +1,3 @@
-"""Configurações para análise V3"""
+"""Configurações para análise"""
 from .settings_v3 import *
 

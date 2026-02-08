@@ -6,7 +6,7 @@ Gera múltiplas visualizações dos protótipos semânticos para análise compar
 
 Usage:
     source .venv/bin/activate
-    python v3/visualize_centroids_by_product.py
+    python visualize_centroids_by_product.py
 """
 
 import sys
@@ -20,10 +20,8 @@ from sklearn.manifold import TSNE
 from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import dendrogram, linkage
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from v3.core.database_v3 import DatabaseManagerV3
-from v3.analysis.prototypes_v3 import PrototypeAnalyzerV3
+from core.database_v3 import DatabaseManagerV3
+from analysis.prototypes_v3 import PrototypeAnalyzerV3
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')

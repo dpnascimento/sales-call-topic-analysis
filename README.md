@@ -1,8 +1,8 @@
-# V3 - Análise de Padrões Semânticos em Ligações de Vendas
+# Análise de Padrões Semânticos em Ligações de Vendas
 
-**Versão:** 3.0.0  
+**Versão:** 1.0.0  
 **Autor:** Daniel Nascimento  
-**Data:** Outubro 2025
+**Data:** Fevereiro 2026
 
 ---
 
@@ -38,9 +38,6 @@ This is a solution for analyzing discriminative semantic patterns in sales calls
 ## 🚀 Início Rápido / Quick Start
 
 ```bash
-# Navegar para o diretório v3 / Navigate to v3 directory
-cd v3
-
 # Executar pipeline principal / Run main pipeline
 python pipeline_v3_main.py
 
@@ -60,6 +57,6 @@ For complete documentation, see:
 
 ---
 
-**Última Atualização / Last Update**: Outubro 2025  
-**Versão / Version**: 3.0.0
+**Última Atualização / Last Update**: Fevereiro 2026  
+**Versão / Version**: 1.0.0
 
