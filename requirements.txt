@@ -37,7 +37,7 @@ psycopg[binary]==3.2.5
 
 # Utils
 tqdm==4.67.1
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 
 # Crypto for DBeaver password decryption
 pycryptodome==3.23.0
